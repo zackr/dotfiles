@@ -7,5 +7,6 @@
 (require 'dotemacs-dev)
 (require 'dotemacs-cpp)
 (require 'dotemacs-js)
+(require 'dotemacs-coffee)
 
 (load custom-file)

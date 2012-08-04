@@ -30,5 +30,6 @@
 (line-number-mode t)		; always show the line number
 (column-number-mode t)
 (setq inhibit-startup-screen t)
+(setq initial-scratch-message nil)
 
 (provide 'dotemacs-look)

@@ -19,4 +19,20 @@
 
 (setq-default require-final-newline t)
 
+(if (>= emacs-major-version 24)
+    (progn
+      (electric-pair-mode t)
+      (electric-indent-mode t)
+      (electric-layout-mode t))
+    ;; autopair mode
+    (when (require 'autopair nil t)
+      (autopair-global-mode)
+      (setq autopair-autowrap t)
+      (setq autopair-blink nil)))
+
+;; whenever an external process changes a file underneath emacs, and there
+;; was no unsaved changes in the corresponding buffer, just revert its
+;; content to reflect what's on-disk.
+(global-auto-revert-mode 1)
+
 (provide 'dotemacs-behavior)
