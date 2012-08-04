@@ -4,3 +4,6 @@
 [submodule "emacs/libs/smart-tab"]
 	path = emacs/libs/smart-tab
 	url = https://github.com/genehack/smart-tab.git
+[submodule "emacs/libs/coffee-mode"]
+	path = emacs/libs/coffee-mode
+	url = https://github.com/defunkt/coffee-mode.git
