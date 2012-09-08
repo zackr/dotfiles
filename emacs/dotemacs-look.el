@@ -1,6 +1,12 @@
-(require 'color-theme)
-(color-theme-initialize)
-(color-theme-billw)
+(if (>= emacs-major-version 24)
+    (progn
+      (add-to-list 'custom-theme-load-path
+                   (concat sdk-directory "emacs/libs/emacs-color-theme-solarized"))
+      (load-theme 'solarized-dark t))
+  (progn
+    (require 'color-theme)
+    (color-theme-initialize)
+    (color-theme-billw)))
 
 (set-default-font "DejaVu Sans Mono-9")
 ;(set-default-font "Inconsolata-10")

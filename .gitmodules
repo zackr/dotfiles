@@ -7,3 +7,6 @@
 [submodule "emacs/libs/coffee-mode"]
 	path = emacs/libs/coffee-mode
 	url = https://github.com/defunkt/coffee-mode.git
+[submodule "emacs/libs/emacs-color-theme-solarized"]
+	path = emacs/libs/emacs-color-theme-solarized
+	url = https://github.com/sellout/emacs-color-theme-solarized.git
