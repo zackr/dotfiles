@@ -8,8 +8,10 @@
     (color-theme-initialize)
     (color-theme-billw)))
 
-(set-default-font "DejaVu Sans Mono-9")
-;(set-default-font "Inconsolata-10")
+(if (eq system-type 'windows-nt)
+    (set-default-font "Consolas-11")
+  (set-default-font "DejaVu Sans Mono-9"))
+;(set-default-font "Inconsolata-11")
 
 
 (setq frame-title-format
