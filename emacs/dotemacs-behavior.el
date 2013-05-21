@@ -22,8 +22,7 @@
 (if (>= emacs-major-version 24)
     (progn
       (electric-pair-mode t)
-      (electric-indent-mode t)
-      (electric-layout-mode t))
+      (electric-indent-mode t))
     ;; autopair mode
     (when (require 'autopair nil t)
       (autopair-global-mode)
