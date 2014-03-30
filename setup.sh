@@ -1,9 +1,9 @@
-if [ ! -f $PWD/zsh/oh-my-zsh/custom/zack.zsh-theme ];
+if [ ! -f "$PWD"/zsh/oh-my-zsh/custom/zack.zsh-theme ];
 then
-    ln -s $PWD/zsh/zack.zsh-theme $PWD/zsh/oh-my-zsh/custom/zack.zsh-theme
+    ln -s "$PWD"/zsh/zack.zsh-theme "$PWD"/zsh/oh-my-zsh/custom/zack.zsh-theme
 fi
 
-cp $PWD/zsh/zshrc.zsh ~/.zshrc
+cp "$PWD"/zsh/zshrc.zsh ~/.zshrc
 SED=`which sed`
 PERL=`which perl`
 if [ -e  "$SED" ]; then

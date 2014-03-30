@@ -8,11 +8,11 @@
     (color-theme-initialize)
     (color-theme-billw)))
 
-(if (eq system-type 'windows-nt)
-    (set-default-font "Consolas-11")
-  (set-default-font "DejaVu Sans Mono-9"))
-;(set-default-font "Inconsolata-11")
-
+(cond ((eq system-type 'window-nt) (set-default-font "Consolas-11"))
+      ((eq system-type 'darwin)
+       (cond ((> (x-display-pixel-width) 2000) (set-default-font "Inconsolata-19"))
+             (t (set-default-font "Inconsolata-12"))))
+      (t (set-default-font "DejaVu Sans Mono-9")))
 
 (setq frame-title-format
   (list
