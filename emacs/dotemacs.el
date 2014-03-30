@@ -8,5 +8,6 @@
 (require 'dotemacs-cpp)
 (require 'dotemacs-js)
 (require 'dotemacs-coffee)
+(require 'dotemacs-python)
 
 (load custom-file)
