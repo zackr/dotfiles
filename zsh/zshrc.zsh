@@ -29,7 +29,7 @@ DISABLE_AUTO_UPDATE="true"
 # plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git debian node npm)
+plugins=(git node npm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -47,3 +47,6 @@ if [ "$PS1" ]; then
     fi
   fi
 fi
+
+export P4CONFIG=.p4config
+export P4DIFF="diff -du"

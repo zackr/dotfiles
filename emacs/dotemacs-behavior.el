@@ -13,9 +13,9 @@
 (set-default-coding-systems 'utf-8)
 (setq default-buffer-file-coding-system 'utf-8)
 
-(add-to-list 'load-path (concat sdk-directory "emacs/libs/smart-tab"))
-(require 'smart-tab)
-(global-smart-tab-mode 1)
+(use-package smart-tab
+  :ensure t
+  :config (global-smart-tab-mode 1))
 
 (setq-default require-final-newline t)
 
