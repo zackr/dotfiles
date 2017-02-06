@@ -18,4 +18,20 @@
             (c-set-style "kde-c")
             ))
 
+(require 'compile)
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (unless (file-exists-p "Makefile")
+              (set (make-local-variable 'compile-command)
+                   (format "make -C /Users/zack/src/vmware/git/vmcore-main mksReplay"
+                           )))))
+
+(defun compile-mks-replay ()
+  (interactive)
+  (set (make-local-variable 'compile-command)
+       (format "make -C /Users/zack/src/vmware/git/vmcore-main mksReplay"))
+  (let ((default-directory "/Users/zack/src/vmware/git/vmcore-main"))
+    (message default-directory)
+    (call-interactively #'compile)))
+
 (provide 'dotemacs-cpp)

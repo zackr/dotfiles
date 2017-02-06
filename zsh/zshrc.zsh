@@ -47,6 +47,6 @@ if [ "$PS1" ]; then
     fi
   fi
 fi
-
+export PATH=$HOME/src/vmware/git-changeset:$HOME/bin:$PATH:$HOME/src/vmware/apps/bin
 export P4CONFIG=.p4config
 export P4DIFF="diff -du"

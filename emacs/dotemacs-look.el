@@ -33,5 +33,6 @@
 (column-number-mode t)
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message nil)
+(setq-default show-trailing-whitespace 1)
 
 (provide 'dotemacs-look)

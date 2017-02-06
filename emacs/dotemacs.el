@@ -10,5 +10,6 @@
 (require 'dotemacs-js)
 (require 'dotemacs-python)
 (require 'dotemacs-web)
+(require 'dotemacs-rust)
 
 (load custom-file)

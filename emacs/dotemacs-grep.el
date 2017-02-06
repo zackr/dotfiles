@@ -8,7 +8,9 @@
 
 ;(rgrep "igrep" "*" default-directory)
 
-(define-key global-map [(f2)] 'lgrep)
+(use-package ag
+  :ensure t)
+(define-key global-map [(f2)] 'ag)
 (define-key global-map [(shift f2)] 'rgrep)
 (define-key global-map [(f12)] 'rgrep)
 

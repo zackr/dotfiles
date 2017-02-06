@@ -15,14 +15,15 @@
 
 (use-package smart-tab
   :ensure t
-  :config (global-smart-tab-mode 1))
+  :config (global-smart-tab-mode t))
 
 (setq-default require-final-newline t)
 
 (if (>= emacs-major-version 24)
     (progn
       (electric-pair-mode t)
-      (electric-indent-mode t))
+      (electric-indent-mode t)
+      (setq-default electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit))
     ;; autopair mode
     (when (require 'autopair nil t)
       (autopair-global-mode)

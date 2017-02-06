@@ -10,4 +10,7 @@
 (define-key global-map [(shift f5)] 'makeclean)
 (define-key global-map [(f5)] 'make)
 
+;; Navigate using subwords for CamelCaseIdentifiers
+(global-subword-mode 1)
+
 (provide 'dotemacs-dev)
