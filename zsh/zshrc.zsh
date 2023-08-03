@@ -29,24 +29,24 @@ DISABLE_AUTO_UPDATE="true"
 # plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git node npm)
+plugins=(git colorize emacs)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
 #ssh keymanager
-if [ "$PS1" ]; then
-  if [ -e /usr/bin/keychain ]; then
-    keychain ~/.ssh/id_rsa
-    if [ -e ~/.ssh-agent-${HOSTNAME} ]; then
-      . ~/.ssh-agent-${HOSTNAME}
-    fi
-    if [ -e ~/.keychain/${HOSTNAME}-sh ]; then
-      . ~/.keychain/${HOSTNAME}-sh
-    fi
-  fi
-fi
-export PATH=$HOME/src/vmware/git-changeset:$HOME/bin:$PATH:$HOME/src/vmware/apps/bin
+#if [ "$PS1" ]; then
+#  if [ -e /usr/bin/keychain ]; then
+#    keychain ~/.ssh/id_rsa
+#    if [ -e ~/.ssh-agent-${HOSTNAME} ]; then
+#      . ~/.ssh-agent-${HOSTNAME}
+#    fi
+#    if [ -e ~/.keychain/${HOSTNAME}-sh ]; then
+#      . ~/.keychain/${HOSTNAME}-sh
+#    fi
+#  fi
+#fi
+export PATH=$HOME/bin:$PATH:/build/apps/bin
 export P4CONFIG=.p4config
 export P4DIFF="diff -du"

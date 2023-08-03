@@ -2,11 +2,13 @@
   :ensure t
   :config (load-theme 'solarized-dark t))
 
-(cond ((eq system-type 'window-nt) (set-default-font "Consolas-11"))
+(cond ((eq system-type 'window-nt) (set-frame-font "Consolas-11"))
       ((eq system-type 'darwin)
-       (cond ((> (x-display-pixel-width) 2000) (set-default-font "Menlo-19"))
-             (t (set-default-font "Menlo-12"))))
-      (t (set-default-font "DejaVu Sans Mono-9")))
+       (cond ((> (x-display-pixel-width) 2000) (set-frame-font "Menlo-19"))
+             (t (set-frame-font "Menlo-12"))))
+      (t
+       (cond ((> (x-display-pixel-width) 2000) (set-frame-font "DejaVu Sans Mono-16"))
+             (t (set-frame-font "DejaVu Sans Mono-9")))))
 
 (setq frame-title-format
   (list

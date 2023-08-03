@@ -11,5 +11,6 @@
 (require 'dotemacs-python)
 (require 'dotemacs-web)
 (require 'dotemacs-rust)
+(require 'dotemacs-swift)
 
 (load custom-file)
