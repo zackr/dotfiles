@@ -5,7 +5,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(hcl-mode auto-package-update dockerfile-mode yaml-mode p4 swift-mode ag web-mode use-package solarized-theme smart-tab racer js2-mode jade-mode company cmake-mode))
+   '(markdown-mode rg deadgrep hcl-mode auto-package-update dockerfile-mode yaml-mode p4 swift-mode ag web-mode use-package solarized-theme smart-tab racer js2-mode jade-mode company cmake-mode))
  '(safe-local-variable-values
    '((eval ignore-errors
            (require 'whitespace)
