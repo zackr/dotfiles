@@ -18,13 +18,12 @@
 (defun zk/setup-frame (frame)
   "Apply look settings to FRAME when it is graphical."
   (when (display-graphic-p frame)
-    (let ((font (zk/pick-font)))
+    (let ((font (zk/pick-font))
+          (width (or (cdr (assq 'width default-frame-alist)) 110))
+          (height (or (cdr (assq 'height default-frame-alist)) 35)))
       (set-frame-font font nil (list frame))
-      (setq default-frame-alist `((width . 110)
-                                   (height . 35)
-                                   (font . ,font)
-                                   (tool-bar-lines . 0)
-                                   (menu-bar-lines . 0))))
+      (set-frame-size frame width height)
+      (add-to-list 'default-frame-alist `(font . ,font)))
     (with-selected-frame frame
       (tool-bar-mode -1)
       (menu-bar-mode -1))))
@@ -37,10 +36,11 @@
 
 ;;; Frame
 (setq frame-inhibit-implied-resize t)
-(setq initial-frame-alist '((width . 110)
+(setq default-frame-alist '((width . 110)
                              (height . 35)
                              (tool-bar-lines . 0)
                              (menu-bar-lines . 0)))
+(setq initial-frame-alist default-frame-alist)
 
 ;;; Chrome
 (blink-cursor-mode -1)
