@@ -1,0 +1,60 @@
+[column]
+        ui = auto
+[branch]
+        autosetuprebase = always
+        sort = -committerdate
+[tag]
+        sort = version:refname
+[init]
+	defaultBranch = main
+[diff]
+        algorithm = histogram
+        colorMoved = plain
+        mnemonicPrefix = true
+        renames = true
+[push]
+        default = simple
+        autoSetupRemote = true
+        followTags = true
+[fetch]
+        prune = true
+        pruneTags = true
+        all = true
+[help]
+        autocorrect = prompt
+[commit]
+        verbose = true
+[rerere]
+        enabled = true
+        autoupdate = true
+[core]
+        excludesfile = ~/.gitignore
+	editor = nvim
+	pager = delta
+[rebase]
+        autoSquash = true
+        autoStash = true
+        updateRefs = true
+[merge]
+	conflictStyle = zdiff3
+[trailer]
+	ifexists = addIfDifferent
+[sendemail]
+        confirm = always
+        assume8bitEncoding = UTF-8
+[safe]
+	directory = /home/zack/src/bpftrace/bcc
+	directory = /home/zack/src/bpftrace/bcc/libbpf-tools/blazesym
+	directory = /build/apps
+[alias]
+	fixes = show -s --pretty='format:Fixes: %h (\"%s\")'
+[credential "https://github-vcf.devops.broadcom.net"]
+	helper = !/usr/bin/gh auth git-credential
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+        dark = true
+	line-numbers = true
+[include]
+	path = ~/src/dotfiles/git/.gitconfig.local
