@@ -55,11 +55,11 @@ add-zsh-hook preexec set_title_preexec
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
-find_files="fdfind --type f --hidden --strip-cwd-prefix --follow --exclude .git --color=always"
-find_directories="fdfind --type d --hidden --strip-cwd-prefix --follow --exclude .git --color=always"
-export FZF_DEFAULT_COMMAND="$find_files"
+find_files="fdfind --type f --hidden --follow --exclude .git --color=always"
+find_directories="fdfind --type d --hidden --follow --exclude .git --color=always"
+export FZF_DEFAULT_COMMAND="$find_files --strip-cwd-prefix"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="$find_directories"
+export FZF_ALT_C_COMMAND="$find_directories --strip-cwd-prefix"
 export FZF_CTRL_R_OPTS="--exact"
 
 # Use fd (https://github.com/sharkdp/fd) for listing path candidates.
@@ -129,7 +129,9 @@ rf() (
 export EDITOR="nvim"
 
 # Set up zoxide to move between folders efficiently
-eval "$(zoxide init zsh)"
+if [[ "$CLAUDECODE" != "1" ]]; then
+    eval "$(zoxide init --cmd cd zsh)"
+fi
 
 # Set up the Starship prompt
 eval "$(starship init zsh)"
@@ -140,7 +142,6 @@ eval $(keychain --eval --agents ssh id_rsa id_ed25519)
 
 # The most important aliases
 alias bat='batcat'
-alias cd='z'
 alias fd='fdfind'
 alias grep='grep --color'
 alias ls='eza -F -gh --icons --group-directories-first --hyperlink'
